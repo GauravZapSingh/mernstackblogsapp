@@ -30,8 +30,8 @@ app.use('/blogs/likes', likes)
 const localUri = "mongodb+srv://gaurav123:gaurav123@cluster0-gurnz.mongodb.net/test?retryWrites=true&w=majority"
 // mongoose.connect('mongodb://localhost:27017/blogs', { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true }, (err) => {
 mongoose.connect(process.env.MONGODB_URI || localUri, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true }, (err) => {
-    if(err) {
-        console.log('err - ',err)
+    if (err) {
+        console.log('err - ', err)
         process.exit(1);
         console.log('Unable to connect to database')
     } else {
@@ -40,7 +40,12 @@ mongoose.connect(process.env.MONGODB_URI || localUri, { useNewUrlParser: true, u
 })
 
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('client/build'))
+    // app.use(express.static('client/build'))
+    app.use(express.static(path.join(__dirname, 'front-end', 'build')));
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, 'front-end', 'build', 'index.html'))
+    });
 }
 app.listen(PORT, () => {
     console.log(`Server is running on Port ${PORT}`)
