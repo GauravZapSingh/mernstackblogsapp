@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const mongoose = require('mongoose')
 const path = require('path')
+// const PORT = process.env.PORT || 5000
 const PORT = process.env.PORT || 8000
 
 require('dotenv').config()
@@ -41,7 +42,6 @@ mongoose.connect(process.env.MONGODB_URI || localUri, { useNewUrlParser: true, u
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'))
 }
-console.log('port ===== ', PORT)
 app.listen(PORT, () => {
     console.log(`Server is running on Port ${PORT}`)
 })
