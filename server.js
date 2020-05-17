@@ -27,7 +27,7 @@ app.use('/blogs', blogs)
 app.use('/blogs/comments', comments)
 app.use('/blogs/likes', likes)
 
-const localUri = "mongodb://localhost:27017/blogs"
+const localUri = "mongodb+srv://gaurav123:gaurav123@cluster0-gurnz.mongodb.net/test?retryWrites=true&w=majority"
 // mongoose.connect('mongodb://localhost:27017/blogs', { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true }, (err) => {
 mongoose.connect(process.env.MONGODB_URI || localUri, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true }, (err) => {
     if(err) {
