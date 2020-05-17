@@ -41,7 +41,7 @@ mongoose.connect(process.env.MONGODB_URI || localUri, { useNewUrlParser: true, u
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'))
 }
-
+console.log('port ===== ', PORT)
 app.listen(PORT, () => {
     console.log(`Server is running on Port ${PORT}`)
 })
