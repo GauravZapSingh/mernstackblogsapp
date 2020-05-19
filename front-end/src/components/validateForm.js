@@ -1,6 +1,5 @@
 export default function validateLogin(values, bodyText, file) {
     let inputErrors = {};
-    console.log('validate')
 
     // Email
     if (values.email !== undefined) {

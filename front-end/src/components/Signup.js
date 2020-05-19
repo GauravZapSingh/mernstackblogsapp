@@ -97,7 +97,7 @@ const Signup = () => {
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="password">Password *</Label>
-                    <Input type="text" name="password" placeholder="Enter Password" onChange={handleInputChange} value={inputValues.password} />
+                    <Input type="password" name="password" placeholder="Enter Password" onChange={handleInputChange} value={inputValues.password} />
                     {inputErrors.password && <p className="input-error">{inputErrors.password}</p>}
                 </FormGroup>
                 <FormGroup>

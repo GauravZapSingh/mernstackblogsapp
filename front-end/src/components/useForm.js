@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 const useForm = (callback, validate, inputValues, bodyText, file) => {
     const [inputErrors, setInputErrors] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
-    console.log('validate hooks - ',inputValues)
 
     const handleSubmit = event => {
         event.preventDefault();
