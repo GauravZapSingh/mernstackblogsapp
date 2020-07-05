@@ -1,4 +1,6 @@
 # Blogs App
+App to Read, Write BLogs. Appreciate other users blogs by giving a like and commenting on their blogs.  
+Link to the app - https://mernstackblogsapp.herokuapp.com/
 
 ## Technologies
 **Front End** - React.js, Redux  
@@ -26,8 +28,10 @@
     * Shows more content written for particular blogs
     * Information about blog author
     * Logged in users can like and comment on the blog. Guest users cannot
+    * Each user can like each blog only once and can add multiple comments.
 * Write Blog
     * Logged in users can write a blog
+    * Blogs with same title will not be accepted
     * Enter about blog and blog display image
     * Form validation
 * Profile
