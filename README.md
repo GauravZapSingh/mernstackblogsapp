@@ -1,6 +1,7 @@
 # Blogs App
 App to Read, Write BLogs. Appreciate other users blogs by giving a like and commenting on their blogs.  
-Link to the app - https://mernstackblogsapp.herokuapp.com/
+Link to the app - https://mernstackblogsapp.herokuapp.com/  
+> **_NOTE:_**  Image are not displayed of previous blogs and users after deploying it onto Heroku. It is because Heroku filesystem is ephemeral - that means that any changes to the filesystem whilst the dyno is running only last until that dyno is shut down or restarted. Each dyno boots with a clean copy of the filesystem from the most recent deploy. - https://help.heroku.com/K1PPS2WM/why-are-my-file-uploads-missing-deleted. Currently working on it however you can still add new image which will be displayed on the app for some time.
 
 ## Technologies
 **Front End** - React.js, Redux  
@@ -11,6 +12,7 @@ Link to the app - https://mernstackblogsapp.herokuapp.com/
 * User SignUp
     * Sign up with unique email id
     * Error if User registers with same email id
+    * Password is hashed before saving it to the database
     * Option to add profile picture. If user does not wish to upload, default picture will be uploaded
     * Form validation
 * User Login
